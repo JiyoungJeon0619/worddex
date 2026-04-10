@@ -1,4 +1,5 @@
 import { useState, useEffect } from "react";
+import Head from "next/head";
 
 // ── localStorage ──────────────────────────────────────────────────────
 const LS_KEY = "worddex_data";
@@ -712,6 +713,11 @@ export default function Home(){
 
   return(
     <div style={{background:"#FFF9F0",minHeight:"100vh"}}>
+      <Head>
+        <title>WordDex 📖</title>
+        <meta name="description" content="단어를 모으며 성장하는 영어 독해" />
+        <link rel="icon" href="/favicon.svg" />
+      </Head>
       {/* 새 단어 토스트 */}
       {newWordAnim&&(
         <div style={{position:"fixed",top:20,left:"50%",transform:"translateX(-50%)",zIndex:500,background:C.ink,color:C.white,padding:"12px 22px",borderRadius:24,fontSize:14,fontWeight:700,boxShadow:"0 6px 24px rgba(0,0,0,0.18)",whiteSpace:"nowrap"}}>
